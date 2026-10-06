@@ -1,0 +1,3 @@
+# Runtime evidence data is intentionally not committed.
+# Keep a deployment template locally if desired.
+data/storage.json

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>X Smart Evidence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="hidden">
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <img id="logo" src="assets/mr-x-logo.png" alt="MR X">
+          <div>
+            <div class="eyebrow">X STUDIO</div>
+            <h1>X SMART EVIDENCE</h1>
+          </div>
+        </div>
+        <div class="top-actions">
+          <span id="operator">Operator</span>
+          <button class="icon-btn" id="closeBtn">×</button>
+        </div>
+      </header>
+
+      <div class="body">
+        <aside class="sidebar">
+          <button class="nav active" data-view="dashboard">Dashboard</button>
+          <button class="nav" data-view="cases">Cases</button>
+          <button class="nav" data-view="evidence">Evidence</button>
+          <button class="nav" data-view="audit">Audit Log</button>
+          <div class="sidebar-spacer"></div>
+          <div class="build">MR X • X STUDIO<br><span>Commercial Edition 1.0.0</span></div>
+        </aside>
+
+        <main class="content">
+          <section id="dashboard" class="view active">
+            <div class="page-head">
+              <div>
+                <span class="eyebrow">OPERATIONS</span>
+                <h2>Evidence Command Center</h2>
+              </div>
+              <button class="primary" id="newCaseDash">+ New Case</button>
+            </div>
+            <div class="stats">
+              <div class="stat"><span>OPEN CASES</span><strong id="statCases">0</strong></div>
+              <div class="stat"><span>TOTAL EVIDENCE</span><strong id="statEvidence">0</strong></div>
+              <div class="stat"><span>CHECKED OUT</span><strong id="statChecked">0</strong></div>
+              <div class="stat"><span>STORED</span><strong id="statStored">0</strong></div>
+            </div>
+            <div class="grid-two">
+              <div class="panel">
+                <div class="panel-head"><h3>Recent Cases</h3><button class="text-btn" data-view-target="cases">View all</button></div>
+                <div id="recentCases" class="list"></div>
+              </div>
+              <div class="panel">
+                <div class="panel-head"><h3>Recent Evidence</h3><button class="text-btn" data-view-target="evidence">View all</button></div>
+                <div id="recentEvidence" class="list"></div>
+              </div>
+            </div>
+          </section>
+
+          <section id="cases" class="view">
+            <div class="page-head">
+              <div><span class="eyebrow">CASE MANAGEMENT</span><h2>Cases</h2></div>
+              <button class="primary" id="newCaseBtn">+ New Case</button>
+            </div>
+            <div class="toolbar">
+              <input id="caseSearch" placeholder="Search cases..." />
+            </div>
+            <div id="caseList" class="cards"></div>
+          </section>
+
+          <section id="evidence" class="view">
+            <div class="page-head">
+              <div><span class="eyebrow">PROPERTY & CHAIN OF CUSTODY</span><h2>Evidence</h2></div>
+              <button class="primary" id="newEvidenceBtn">+ Add Evidence</button>
+            </div>
+            <div class="toolbar">
+              <input id="evidenceSearch" placeholder="Search evidence, serial, tag..." />
+            </div>
+            <div id="evidenceList" class="cards"></div>
+          </section>
+
+          <section id="audit" class="view">
+            <div class="page-head"><div><span class="eyebrow">ACCOUNTABILITY</span><h2>Audit Log</h2></div></div>
+            <div id="auditList" class="audit-list"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-card">
+        <div class="modal-head"><h3 id="modalTitle"></h3><button class="icon-btn" id="modalClose">×</button></div>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
